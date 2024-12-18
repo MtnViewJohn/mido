@@ -1,0 +1,4 @@
+# You must remove unused comment lines for the released package.
+00-update-shebang-py3.patch
+01-fix-python-version-binaries.patch
+02-prevent-virtual-port-name-mangling.patch

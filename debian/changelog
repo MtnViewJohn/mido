@@ -1,0 +1,110 @@
+python-mido (1.2.10-1.1) unstable; urgency=medium
+
+  * NMU add patch 02-prevent-virtual-port-name-mangling.patch.
+    Closes: #1090376
+  * Bump Standards-Version to 4.7.0.1 (no changes)
+
+ -- John Horigan <john@glyphic.com>  Tue, 17 Dec 2024 15:56:26 -0800
+
+python-mido (1.2.10-1) unstable; urgency=medium
+
+  * New upstream release (1.2.10):
+    + Refresh d/patches.
+  * debian/control: Update homepage field to use upstream official site
+    instead of PyPi.
+  * Bump Standards-Version to 4.6.0. No changes were required.
+  * debian/copyright: Update copyright holder years
+
+ -- Josue Ortega <josue@debian.org>  Wed, 08 Dec 2021 17:30:44 -0600
+
+python-mido (1.2.9-3) unstable; urgency=medium
+
+  * Add autopkgtest runtime test in order to drop the previous supercial
+    test. Closes: #969859
+  * debian/control: Document Rules-Requires-Root as 'no'
+  * debian/watch: Bump file standard version to 4
+  * Bump debhelper-compat to use (=13)
+  * Bump Standards-Version to 4.5.1. No changes required
+  * debian/patches/*.patch: Document Forwarded field
+
+ -- Josue Ortega <josue@debian.org>  Mon, 11 Jan 2021 19:40:09 -0600
+
+python-mido (1.2.9-2) unstable; urgency=medium
+
+  * Drop Python 2 package
+  * Update package to use debhelper-compat (= 12)
+  * Bump Standards-Version to 4.4.0. No changes required
+
+ -- Josue Ortega <josue@debian.org>  Sun, 08 Sep 2019 13:14:28 -0600
+
+python-mido (1.2.9-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/watch: Use https protocol
+
+  [ Josue Ortega ]
+  * New upstream release (1.2.9):
+    - Update debian/patches/*
+  * Fix CI tests
+  * Add examples to packages installation
+
+ -- Josue Ortega <josue@debian.org>  Sun, 09 Dec 2018 08:44:29 -0600
+
+python-mido (1.2.8-1) unstable; urgency=medium
+
+  * New upstream release (1.2.8)
+  * Update debian/patches/* improving solution style
+  * Bump compat level from 9 to 11
+  * debian/control:
+    - Remove anciente X-Python-Version
+    - Bump X-Python3-Version to use >= 3.6
+    - Update Vcs fields to use salsa.d.o
+  * Bump Standards-Version to 4.2.1:
+    - debian/copyright: Updates Format URI to https
+  * Add autopkgtest test suite
+
+ -- Josue Ortega <josue@debian.org>  Sat, 29 Sep 2018 12:41:08 -0600
+
+python-mido (1.2.7-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Josue Ortega <josue@debian.org>  Mon, 19 Jun 2017 18:27:03 -0600
+
+python-mido (1.2.7-1) experimental; urgency=medium
+
+  * New upstream release (v1.2.7):
+    - debian/control: adds python{3}-rtmidi to Suggests field.
+
+ -- Josue Ortega <josue@debian.org>  Fri, 02 Jun 2017 16:35:46 -0600
+
+python-mido (1.1.24-1) experimental; urgency=medium
+
+  * New upstream release:
+    - Refresh debian/patches/01-fix-python-version-binaries.patch.
+
+ -- Josue Ortega <josue@debian.org>  Sun, 19 Feb 2017 16:02:56 -0600
+
+python-mido (1.1.18-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Josue Ortega <josue@debian.org>  Sun, 23 Oct 2016 18:04:53 -0600
+
+python-mido (1.1.16-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Josue Ortega <josue@debian.org>  Sun, 02 Oct 2016 17:46:54 -0600
+
+python-mido (1.1.15-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Josue Ortega <josue@debian.org>  Sun, 04 Sep 2016 16:47:09 -0600
+
+python-mido (1.1.14-1) unstable; urgency=low
+
+  * Initial release. Closes: #825144
+
+ -- Josue Ortega <josue@debian.org>  Thu, 07 Jul 2016 17:28:43 +0200

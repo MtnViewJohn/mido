@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=mido
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_build:
+	cp $(CURDIR)/bin/mido-connect $(CURDIR)/bin/mido3-connect
+	cp $(CURDIR)/bin/mido-play $(CURDIR)/bin/mido3-play
+	cp $(CURDIR)/bin/mido-ports $(CURDIR)/bin/mido3-ports
+	cp $(CURDIR)/bin/mido-serve $(CURDIR)/bin/mido3-serve
+	dh_auto_build
+
+override_dh_auto_clean:
+	rm -rf $(CURDIR)/bin/mido3*
+	dh_auto_clean

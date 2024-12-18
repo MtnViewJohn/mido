@@ -1,0 +1,42 @@
+Description: Generates executable files for Python 3 version to avoid collision names.
+Author: Josue Ortega <josue@debian.org>
+Forwarded: no 
+Last-Update: 2018-11-04
+Forwarded: not-needed
+
+--- a/setup.py
++++ b/setup.py
+@@ -31,7 +31,9 @@
+ elif sys.argv[-1] == "docs":
+     os.system("sphinx-build docs docs/_build")
+     sys.exit()
+-
++PY_VERSION = ''
++if sys.version_info >= (3,0):
++    PY_VERSION = sys.version_info[0]
+ 
+ setup(
+     name='mido',
+@@ -45,10 +47,10 @@
+     package_data={'': ['LICENSE']},
+     package_dir={'mido': 'mido'},
+     packages=['mido', 'mido.backends'],
+-    scripts=['bin/mido-play',
+-             'bin/mido-ports',
+-             'bin/mido-serve',
+-             'bin/mido-connect'],
++    scripts=['bin/mido{}-play'.format(PY_VERSION),
++             'bin/mido{}-ports'.format(PY_VERSION),
++             'bin/mido{}-serve'.format(PY_VERSION),
++             'bin/mido{}-connect'.format(PY_VERSION)],
+     include_package_data=True,
+     install_requires=[],
+     extras_require={
+--- a/bin/mido-play
++++ b/bin/mido-play
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python3
+ """
+ Play MIDI file on output port.
+ 

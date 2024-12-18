@@ -1,0 +1,27 @@
+Description: Backport bugfix from v 1.3.3 "Prevent virtual port name mangling"
+Author: John Horigan <john@glyphic.com>
+Last-Update: 2024-12-17
+Forwarded: not-needed
+
+--- a/mido/backends/rtmidi.py
++++ b/mido/backends/rtmidi.py
+@@ -71,9 +71,6 @@
+ 
+ def _open_port(rt, name=None, client_name=None, virtual=False, api=None):
+ 
+-    if api == 'LINUX_ALSA':
+-        name = expand_alsa_port_name(rt.get_ports(), name)
+-
+     if client_name is not None:
+         virtual = True
+ 
+@@ -84,6 +81,9 @@
+         rt.open_virtual_port(name)
+         return name
+ 
++    if api == 'LINUX_ALSA':
++        name = expand_alsa_port_name(rt.get_ports(), name)
++
+     port_names = rt.get_ports()
+     if len(port_names) == 0:
+         raise IOError('no ports available')

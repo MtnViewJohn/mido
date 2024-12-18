@@ -1,0 +1,2 @@
+Tests: message-test
+Depends: python3-mido

@@ -1,0 +1,4 @@
+debian/man/python3/mido3-connect.1
+debian/man/python3/mido3-play.1 
+debian/man/python3/mido3-ports.1 
+debian/man/python3/mido3-serve.1

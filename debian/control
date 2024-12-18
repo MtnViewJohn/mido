@@ -1,0 +1,28 @@
+Source: python-mido
+Section: python
+Priority: optional
+Maintainer: Josue Ortega <josue@debian.org>
+Build-Depends: debhelper-compat (= 13),
+ dh-python,
+ python3-all,
+ python3-setuptools,
+ python3-pytest (>= 2.9.2)
+Standards-Version: 4.7.0.1
+Homepage: https://github.com/mido/mido
+X-Python3-Version: >= 3.6
+Vcs-Git: https://salsa.debian.org/debian/python-mido.git
+Vcs-Browser: https://salsa.debian.org/debian/python-mido
+Rules-Requires-Root: no
+
+Package: python3-mido
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Suggests: libportmidi0, libportmidi-dev, python3-rtmidi
+Description: Python 3 module for working with MIDI messages and ports
+ Python 3 module for working with convenient messages objects, it has full
+ support for the 18 messages defined by the MIDI standard.
+ Mido brings support for MIDI files (read, write, create and play) with
+ complete access to every message in the file, including all common meta
+ messages. Implements MIDI over TCP/IP with socket ports, allowing wireless MIDI
+ between two computers. Also includes programs for playing MIDI files, listing
+ ports and serving and forwarding ports over a network.
